@@ -2,11 +2,12 @@
 //Have to create the variable that will be used
 var wordBank=["javascript", "function", "append", "hypertext", "algorithm", "bug", "click", "frustration", "command", "steps", "memory", "data", "call", "event", "input", "output", "programming", "variable"]
 //variable to store the word from the array
-var randomWord="";
+var randomWord = "";
 //array to store the letters that are split from the chosen word
 var wordSplit=[];
-//variable used to store the lettes
+//variable used to store the letters
 var splits;
+//array 
 var splitsTrue =[];
 var userGuess =[];
 var incorrect=[];
@@ -20,6 +21,7 @@ function startGame(){
 //have to store the randomword and split it    
     wordSplit = randomWord.split("");
     splits = wordSplit.length;
+        
 //have to create a for loop to show each letter stored 
     for (i=0; i < splits; i++){
         splitsTrue.push("_");
