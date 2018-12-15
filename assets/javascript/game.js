@@ -5,12 +5,11 @@ var wordBank=["javascript", "function", "append", "hypertext", "algorithm", "bug
 var randomWord = "";
 //array to store the letters that are split from the chosen word
 var wordSplit=[];
-//variable used to store the letters
-var splits;
+
 //array 
-var splitsTrue =[];
-var userGuess =[];
-var incorrect=[];
+var splitsOutput =[];
+var matchedLetters =[];
+var incorrectGuesses=[];
 var losses = 0;
 var wins = 0;
 var guessLeft = 10;
@@ -20,43 +19,68 @@ function startGame(){
     randomWord=wordBank[Math.floor(Math.random() * wordBank.length)];
 //have to store the randomword and split it    
     wordSplit = randomWord.split("");
-    splits = wordSplit.length;
         
 //have to create a for loop to show each letter stored 
-    for (i=0; i < splits; i++){
-        splitsTrue.push("_");
+    for (var i=0; i < wordSplit.length; i++){
+        splitsOutput.push("_");
     }
 //write to the id on index.html
-    document.getElementById("newWord").innerHTML = splitsTrue.join(" ");
+    document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
 
     console.log(randomWord);
     console.log(wordSplit);
-    console.log(splits);
-    console.log(splitsTrue);
+    console.log(splitsOutput);
+}
+
+function updateThePage(userGuess){
+    if (guessLeft===0){
+        //restart the game
+
+
+    }
+    else{
+        
+        checkIfIncorrect(userGuess);
+        
+        //display the word
+        //check if win
+    }
+   
+}
+
+//display the word
+function displayWord(){
+
+    
+}
+
+
+
+//check if correct
+function checkIfCorrect(){
+
+
+}
+
+//check if incorrect
+function checkIfIncorrect(userGuess){
+   
+    if(wordSplit.indexOf(userGuess) === -1){
+        incorrectGuesses.push(userGuess);
+        guessLeft--;
+        $("#guessesLeft").text(guessLeft);
+        $("#incorrectGuesses").text(incorrectGuesses.join(", "));
+    }
+
 }
 
 //grabs the user input and stores it in array
 document.onkeyup = function(event)
-{
+    {
     userGuess = event.key;
-    if(randomWord.indexof(userGuess) > -1){
-        for (var i = 0; i < randomWord.length; i++){
-            if(randomWord[i] === userGuess ){
-
-
-            }
-
-        }
+    updateThePage(userGuess);
+    console.log(userGuess);
     }
-}
-    
- 
-
-
-
-
-
-
 
 //Call the function to start
 startGame()
