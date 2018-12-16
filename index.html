@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="./assets/css/style.css">-->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Document</title>
 </head>
 
 <body>
-
+  <div class=container>
   <div class="jumbotron">
-    <h1 class="text-center">Hangman</h1>
-    <h2 class="text-center">Can you guess my word?</h2>
+    <h1 class="text-primary text-center">Hangman</h1>
+    <h2 class="text-primary text-center">Can you guess my word?</h2>
   </div>
-
+  </div>
   <div class="container">
 
     <div class="row">
       <div class="col-md-12">
-        <div class="card mb-2">
-          <h3 class="card-header text-center">Press any key to start!</h3>
-          <div class="card-body text-center">
+        <div class="card border-primary mb-2">
+          <h3 class="card-header bg-transparent border-primary text-primary text-center">Press any key to start!</h3>
+          <div class="card-body text-primary text-center">
             <h1 id="newWord">---</h1>
           </div>
         </div>
@@ -32,9 +32,9 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div class="card mb-2">
-          <h3 class="card-header text-center">Guesses Left</h3>
-          <div class="card-body text-center" id="guessesLeft">
+        <div class="card border-primary mb-2">
+          <h3 class="card-header bg-transparent border-primary text-primary text-center">Guesses Left</h3>
+          <div class="card-body  text-primary text-center" id="guessesLeft">
             
           </div>
         </div>
@@ -43,9 +43,9 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div class="card mb-2">
-          <h3 class="card-header text-center">Incorrect Guesses</h3>
-          <div class="card-body text-center">
+        <div class="card border-primary mb-2">
+          <h3 class="card-header bg-transparent border-primary text-primary text-center">Incorrect Guesses</h3>
+          <div class="card-body text-primary text-center">
             <h1 id="incorrectGuesses"></h1>
           </div>
         </div>
@@ -54,9 +54,9 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div class="card mb-2">
-          <h3 class="card-header text-center">Result</h3>
-          <div class="card-body text-center">
+        <div class="card border-primary mb-2">
+          <h3 class="card-header bg-transparent border-primary text-primary text-center">Result</h3>
+          <div class="card-body text-primary text-center">
             <h1 id="result"></h1>
           </div>
         </div>

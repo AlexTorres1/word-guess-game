@@ -1,4 +1,9 @@
 .jumbotron{
-    background-image: url(../images/wordcloud.jpg);
-    /*background-position: 50% 0;*/
+    
+    background-position: 50% 0;
+    margin-top: 10px;
+}
+body{
+    padding-bottom: 50px;
+    background: url(../images/BG.jpeg);
 }

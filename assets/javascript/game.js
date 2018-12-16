@@ -26,6 +26,7 @@ function startGame(){
     }
 //write to the id on index.html
     document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
+    $("#guessesLeft").text(guessLeft);
 
     console.log(randomWord);
     console.log(wordSplit);
@@ -34,7 +35,9 @@ function startGame(){
 
 function updateThePage(userGuess){
     if (guessLeft===0){
-        //restart the game
+
+        reset();
+       
 
 
     }
@@ -51,7 +54,7 @@ function updateThePage(userGuess){
 //display the word
 function displayWord(){
 
-    
+
 }
 
 
@@ -64,12 +67,16 @@ function checkIfCorrect(){
 
 //check if incorrect
 function checkIfIncorrect(userGuess){
-   
-    if(wordSplit.indexOf(userGuess) === -1){
+   var index = wordSplit.indexOf(userGuess);
+    if( index === -1){
         incorrectGuesses.push(userGuess);
         guessLeft--;
         $("#guessesLeft").text(guessLeft);
         $("#incorrectGuesses").text(incorrectGuesses.join(", "));
+    } else {
+        splitsOutput[index] = userGuess;
+        document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
+        
     }
 
 }
@@ -79,8 +86,19 @@ document.onkeyup = function(event)
     {
     userGuess = event.key;
     updateThePage(userGuess);
-    console.log(userGuess);
+    
     }
+
+//to restart the game
+function reset(){
+     splitsOutput =[];
+     matchedLetters =[];
+     incorrectGuesses=[];
+     guessLeft = 10;
+     //not exactly sure why I only need to empty these, but it works
+     startGame();
+
+}
 
 //Call the function to start
 startGame()
