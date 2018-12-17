@@ -29,7 +29,6 @@ function startGame(){
     //$("newWord").text(splitsOutput.join(""));
     
     $("#guessesLeft").text(guessLeft);
-
     $("#lossResult").text(losses);
     $("#winResult").text(wins);
 
@@ -41,7 +40,8 @@ function startGame(){
 
 function updateThePage(userGuess){
     if (guessLeft===0){
-
+        losses++;
+        $("#lossResult").text(losses);
         reset();
        
 
