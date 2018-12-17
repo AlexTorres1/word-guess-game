@@ -26,7 +26,13 @@ function startGame(){
     }
 //write to the id on index.html
     document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
+    //$("newWord").text(splitsOutput.join(""));
+    
     $("#guessesLeft").text(guessLeft);
+
+    document.getElementById("lossResult").innerHTML = losses;
+    document.getElementById("winResult").innerHTML = wins;
+
 
     console.log(randomWord);
     console.log(wordSplit);
@@ -45,25 +51,11 @@ function updateThePage(userGuess){
         
         checkIfIncorrect(userGuess);
         
-        //display the word
-        //check if win
+        
     }
    
 }
 
-//display the word
-function displayWord(){
-
-
-}
-
-
-
-//check if correct
-function checkIfCorrect(){
-
-
-}
 
 //check if incorrect
 function checkIfIncorrect(userGuess){
@@ -78,6 +70,11 @@ function checkIfIncorrect(userGuess){
         document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
         
     }
+
+}
+
+function displayLosses(){
+
 
 }
 
