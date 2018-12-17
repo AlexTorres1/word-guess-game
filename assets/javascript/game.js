@@ -40,12 +40,12 @@ function startGame(){
 
 function updateThePage(userGuess){
     if (guessLeft===0){
+        //adds a +1 to losses counter 
         losses++;
         $("#lossResult").text(losses);
+        //restarts the game
         reset();
        
-
-
     }
     else{
         
@@ -55,6 +55,14 @@ function updateThePage(userGuess){
     }
    
 }
+
+/*function updateWIns(){
+    //i know adding this will add a +1 to wins but not sure where to add it yet
+    if ()
+    wins++;
+    $("#winResult").text(wins);
+
+}*/
 
 
 //check if incorrect
