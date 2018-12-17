@@ -17,8 +17,12 @@ var guessLeft = 10;
 //Function to start the game
 function startGame(){
     randomWord=wordBank[Math.floor(Math.random() * wordBank.length)];
+
+    //lowercase the variable
+    randomWordLower = randomWord.toLowerCase();
+
 //have to store the randomword and split it    
-    wordSplit = randomWord.split("");
+    wordSplit = randomWordLower.split("");
         
 //have to create a for loop to show each letter stored 
     for (var i=0; i < wordSplit.length; i++){
@@ -50,19 +54,11 @@ function updateThePage(userGuess){
     else{
         
         checkIfIncorrect(userGuess);
-        
+        //updateWIns();
         
     }
    
 }
-
-/*function updateWIns(){
-    //i know adding this will add a +1 to wins but not sure where to add it yet
-    if ()
-    wins++;
-    $("#winResult").text(wins);
-
-}*/
 
 
 //check if incorrect
