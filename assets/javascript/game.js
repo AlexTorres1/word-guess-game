@@ -30,8 +30,8 @@ function startGame(){
     
     $("#guessesLeft").text(guessLeft);
 
-    document.getElementById("lossResult").innerHTML = losses;
-    document.getElementById("winResult").innerHTML = wins;
+    $("#lossResult").text(losses);
+    $("#winResult").text(wins);
 
 
     console.log(randomWord);
