@@ -23,11 +23,6 @@ $("#startGame").on("click", function() {
         });
 
 function startGame(){
-  
-        /*$("#startGame").on("click", function() {
-            startGame();
-        });
-        console.log(startGame);*/
 
     randomWord=wordBank[Math.floor(Math.random() * wordBank.length)];
 
@@ -42,7 +37,7 @@ function startGame(){
         splitsOutput.push("_");
     }
 //write to the id on index.html
-    document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
+    $("newWord").text(splitsOutput.join(" "));
     //$("newWord").text(splitsOutput.join(""));
     
     $("#guessesLeft").text(guessLeft);
@@ -65,7 +60,6 @@ function updateThePage(userGuess){
        
     }
     else{
-        
         checkIfIncorrect(userGuess);
         //updateWIns();
         
@@ -84,14 +78,14 @@ function checkIfIncorrect(userGuess){
         $("#incorrectGuesses").text(incorrectGuesses.join(", "));
     } else {
         splitsOutput[index] = userGuess;
-        document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
-        
+        $("newWord").text(incorrectGuesses.join(" "));
+        displayWins();
     }
 
 }
 
 function displayWins(){
-    if (wordSplit===userGuess){
+    if (wordSplit === userGuess){
         wins++;
 
     }
