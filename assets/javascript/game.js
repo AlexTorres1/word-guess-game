@@ -15,7 +15,20 @@ var wins = 0;
 var guessLeft = 10;
 
 //Function to start the game
+
+$("#startGame").on("click", function() {
+    console.log("start")
+            reset();
+            
+        });
+
 function startGame(){
+  
+        /*$("#startGame").on("click", function() {
+            startGame();
+        });
+        console.log(startGame);*/
+
     randomWord=wordBank[Math.floor(Math.random() * wordBank.length)];
 
     //lowercase the variable
@@ -77,7 +90,11 @@ function checkIfIncorrect(userGuess){
 
 }
 
-function displayLosses(){
+function displayWins(){
+    if (wordSplit===userGuess){
+        wins++;
+
+    }
 
 
 }
