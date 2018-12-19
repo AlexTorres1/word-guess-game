@@ -37,7 +37,7 @@ function startGame(){
         splitsOutput.push("_");
     }
 //write to the id on index.html
-    $("newWord").text(splitsOutput.join(" "));
+    document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
     //$("newWord").text(splitsOutput.join(""));
     
     $("#guessesLeft").text(guessLeft);
@@ -59,6 +59,12 @@ function updateThePage(userGuess){
         reset();
        
     }
+    if(userGuess === wordSplit){
+        wins++;
+        reset();
+
+
+    }
     else{
         checkIfIncorrect(userGuess);
         //updateWIns();
@@ -78,7 +84,7 @@ function checkIfIncorrect(userGuess){
         $("#incorrectGuesses").text(incorrectGuesses.join(", "));
     } else {
         splitsOutput[index] = userGuess;
-        $("newWord").text(incorrectGuesses.join(" "));
+        document.getElementById("newWord").innerHTML = splitsOutput.join(" ");
         displayWins();
     }
 
